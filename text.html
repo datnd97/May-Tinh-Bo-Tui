@@ -9,12 +9,15 @@
 <body>
 
     <div id="show"> </div>
-
+    <input type="text" id="input" value="2" disabled>
 
     <script>
-        var ans = eval("'1'+'2'");
-        document.getElementById('show').innerHTML = ans;
-    
+        var ans = eval("1+2");
+        
+        document.getElementById('show').value = ans;
+        document.getElementById('input').value = ans;
+
+        
     </script>
 </body>
 </html>
