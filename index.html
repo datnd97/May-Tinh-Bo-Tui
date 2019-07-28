@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+        <div class="calculator">
+
+                <input type="text" class="calculator-screen" id="input" value="" disabled />
+
+                <div class="calculator-keys">
+
+                        <button type="button" value="+" onclick="getOperator('+')">+</button>
+                        <button type="button" value="-" onclick="getOperator('-')">-</button>
+                        <button type="button"  value="*" onclick="getOperator('*')">&times;</button>
+                        <button type="button" value="/" onclick="getOperator('/')">&divide;</button>
+
+                       
+                        <button type="button" onclick="getNumber(7)" id="seven" value="7">7</button>
+                        <button type="button" onclick="getNumber(8)" id="eight" value="8">8</button>
+                        <button type="button" onclick="getNumber(9)" id="nine" value="9">9</button>
+
+
+
+
+                        <button type="button" onclick="getNumber(4)" id="four" value="4">4</button>
+                        <button type="button" onclick="getNumber(5)" id="five" value="5">5</button>
+                        <button type="button" onclick="getNumber(6)" id="six" value="6">6</button>
+
+
+                        <button type="button" onclick="getNumber(1)" id="one" value="1">1</button>
+                        <button type="button" onclick="getNumber(2)" id="two" value="2">2</button>
+                        <button type="button" onclick="getNumber(3)" id="three" value="3">3</button>
+
+
+                        <button type="button" id="zero" onclick="getNumber(0)" value="0">0</button>
+                        <button type="button" class="decimal" value=".">.</button>
+                        <button type="button" onclick="getClear()" class="all-clear" value="all-clear">AC</button>
+
+                        <button type="button" class="equal-sign operator" value="=" onclick="computer()">=</button>
+
+                </div>
+        </div>
+
+        <script>
+                function getNumber(num) {
+                        var input = document.getElementById('input');
+                        switch (num) {
+                                
+                                case 1:
+                                        input.value += '1';
+                                        break;
+                                case 2:
+                                        input.value += '2';
+                                        break;
+                                case 3:
+                                        input.value += '3';
+                                        break;
+                                case 4:
+                                        input.value += '4';
+                                        break;
+                                case 5:
+                                        input.value += '5';
+                                        break;
+                                case 6:
+                                        input.value += '6';
+                                        break;
+                                case 7:
+                                        input.value += '7';
+                                        break;
+                                case 8:
+                                        input.value += '8';
+                                        break;
+                                case 9:
+                                        input.value += '9';
+                                        break;
+                                case 0:
+                                        input.value += '0';
+                                        break;
+                                default:
+                                        break;
+                        }
+                }
+                function getOperator(num)
+                {
+                        var input  = document.getElementById('input');
+                        switch (num) {
+                                case "+":
+                                        input.value +="+";
+                                        break;
+                                case "-":
+                                input.value +="-";
+                                        break;
+                                case "*":
+                                input.value +="*";
+                                        break;
+                                case "/":
+                                input.value +="/";
+                                        break;
+                                
+                                default:
+                                        break;
+                        }
+                }
+                function getClear()
+                {
+                        var input = document.getElementById('input');
+                        input.value=" ";
+                        
+                }
+
+                function computer() {
+                        var input = document.getElementById('input');
+                        var ans = eval(input.value);
+                        input.value = ans;
+                  }
+        </script>
+</body>
+
+</html>
